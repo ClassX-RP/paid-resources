@@ -1,0 +1,278 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : localhost
+-- Généré le : mer. 27 jan. 2021 à 20:30
+-- Version du serveur :  10.4.13-MariaDB
+-- Version de PHP : 7.4.8
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données : `classx`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `items`
+--
+
+CREATE TABLE `items` (
+  `name` varchar(50) NOT NULL,
+  `label` varchar(50) NOT NULL,
+  `limit` int(11) NOT NULL DEFAULT -1,
+  `rare` int(11) NOT NULL DEFAULT 0,
+  `can_remove` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `items`
+--
+
+INSERT INTO `items` (`name`, `label`, `limit`, `rare`, `can_remove`) VALUES
+('absinthe', 'Bouteille Absinthe', 5, 0, 1),
+('alive_chicken', 'Poulet vivant', 20, 0, 1),
+('bag', 'Sac de Sport', 1, 0, 1),
+('bagofdope', 'Sac de Dope', 50, 0, 1),
+('bandage', 'Bandage', 20, 0, 1),
+('bironlack_spray_paint', 'Peinture en aérosol', -1, 0, 1),
+('ble', 'Blé', 20, 0, 1),
+('blowpipe', 'Chalumeaux', 15, 0, 1),
+('bmx', 'BMX', 1, 0, 1),
+('boomdlugie', 'Skin bombe rifles', -1, 0, 1),
+('bread', 'Pain', -1, 0, 1),
+('bullet1', 'Gilet par balle', 2, 0, 1),
+('burger', 'Hamburger', 10, 0, 1),
+('caisseketchup', 'Caisse de Ketchup', 5, 0, 1),
+('canette_biere', 'Canette de bière', 20, 0, 1),
+('cannabis', 'Cannabis', 40, 0, 1),
+('carokit', 'Kit carosserie', 3, 0, 1),
+('carotool', 'outils carosserie', 4, 0, 1),
+('cartebrinks', 'Carte Banque Brinks', 1, 0, 1),
+('celownik', 'Viseur', 5, 0, 1),
+('celownikdluga', 'Viseur rifles', -1, 0, 1),
+('champagne', 'Bouteille de Champagne', 10, 0, 1),
+('chemicals', 'Produits chimiques', 100, 0, 1),
+('chemicalslisence', 'Produits chimiques License', 1, 0, 1),
+('chicha', 'Chicha', 5, 0, 1),
+('chips', 'Paquet de Chips', -1, 0, 1),
+('chirurgie', 'Chirurgie', 1, 0, 1),
+('chocolate', 'Barre de Chocolat', -1, 0, 1),
+('clip', 'Chargeur', 10, 0, 1),
+('clothe', 'Vêtement', 40, 0, 1),
+('cocacola', 'Canette de Coca-Cola', -1, 0, 1),
+('cocaine_cut', 'Cocaïne coupée', 50, 0, 1),
+('cocaine_packaged', 'Figurine Super Hero', -1, 0, 1),
+('coca_leaf', 'Feuille de Coke', 40, 0, 1),
+('coffe', 'Café', -1, 0, 1),
+('coke', 'Coke', 100, 0, 1),
+('coke10g', 'Cocaine (10G)', 50, 0, 1),
+('coke1g', 'Cocaine (1G)', 50, 0, 1),
+('cokebrick', 'Brique de Cocaine (100G)', 20, 0, 1),
+('cokeburn', 'USB-C blanc', 2, 0, 1),
+('coke_pooch', 'Pochon de coke', 50, 0, 1),
+('contract', 'Contrat Véhicule', 5, 0, 1),
+('contrat', 'Contrat de plongé', 15, 0, 1),
+('coyotte', 'Coyotte', 1, 0, 1),
+('cupcake', 'Cupcake', -1, 0, 1),
+('cutted_wood', 'Bois coupé', 20, 0, 1),
+('cut_money', 'Argent contrefait - Couper', -1, 0, 1),
+('czaszkidlugie', 'Skin crâne rifles', -1, 0, 1),
+('diamond', 'Diamant', -1, 0, 1),
+('donut', 'Donuts', -1, 0, 1),
+('dopebag', 'Sachet hermétique', 5, 0, 1),
+('douille', 'Douille', 20, 0, 1),
+('drill', 'Foreuse', 5, 0, 1),
+('drpepper', 'Dr. Pepper', 10, 0, 1),
+('drugbags', 'Sac', 80, 0, 1),
+('drugscales', 'Balance', 5, 0, 1),
+('electrotab', 'Outils Eléctronique', -1, 0, 1),
+('energy', 'Energy Drink', 10, 0, 1),
+('etui', 'Coque WaterProof', 5, 0, 1),
+('fabric', 'Tissu', 80, 0, 1),
+('farine', 'Farine', 20, 0, 1),
+('fish', 'Poisson', 100, 0, 1),
+('fishbait', 'Appâts de poisson', 30, 0, 1),
+('fishingrod', 'Canne à pêche', 2, 0, 1),
+('fixkit', 'Kit réparation', 5, 0, 1),
+('fixtool', 'outils réparation', 6, 0, 1),
+('flashlight', 'Lampe', 5, 0, 1),
+('fountain', 'Fontaine feu d\'artifice', -1, 0, 1),
+('frites', 'Barquette de frites', 10, 0, 1),
+('fromage', 'Morceau de fromage', 5, 0, 1),
+('gazbottle', 'bouteille de gaz', 11, 0, 1),
+('gintonic', 'Gin Tonic', 5, 0, 1),
+('gitanes', 'Lucky Strike', -1, 0, 1),
+('gold', 'lingot dor', -1, 0, 1),
+('grand_cru', 'Grand cru', 35, 0, 1),
+('grip', 'Poignée', 5, 0, 1),
+('gym_membership', 'Abonnement Musculation', -1, 0, 1),
+('hamburger', 'Hamburger', -1, 0, 1),
+('hazmat1', 'Combinaison Hazmat Noir	', -1, 0, 1),
+('hazmat2', 'Combinaison Hazmat Bleu	', -1, 0, 1),
+('hazmat3', 'Combinaison Hazmat Jaune	', -1, 0, 1),
+('hazmat4', 'Combinaison Hazmat Blanche	', -1, 0, 1),
+('headbag', 'Sac de tête ', 5, 0, 1),
+('heroin', 'Heroin', 80, 0, 1),
+('highgradefemaleseed', 'Graine de dopage femelle+', 10, 0, 1),
+('highgradefert', 'Engrais de haute qualité', 10, 0, 1),
+('highgrademaleseed', 'Graine de dopage mâle+', 10, 0, 1),
+('holografik', 'Vue holographique', -1, 0, 1),
+('hqscale', 'Échelle de haute qualité', 1, 0, 1),
+('hydrochloric_acid', 'Acide hydrochlorique', 15, 0, 1),
+('icetea', 'Ice Tea', 10, 0, 1),
+('jeton', 'Jeton', 50000, 0, 1),
+('joint2g', 'Joint (2G)', 50, 0, 1),
+('jumelles', 'Jumelles', 1, 0, 1),
+('jusfruit', 'Jus de fruits', 10, 0, 1),
+('jus_raisin', 'Jus de raisin', 50, 0, 1),
+('kastetbalas', 'Skin poingt-americain Ballas', -1, 0, 1),
+('kastetdiament', 'Skin poingt-americain Diamond', -1, 0, 1),
+('kastetdollar', 'Skin poingt-americain Dollar', -1, 0, 1),
+('kastethate', 'Skin poingt-americain Hate', -1, 0, 1),
+('kastetpimp', 'Skin poingt-americain PIMP', -1, 0, 1),
+('kastetpink', 'Peau articulation love', -1, 0, 1),
+('kastetplayer', 'Skin poingt-americain Player', -1, 0, 1),
+('kastetvagos', 'Skin poingt-americain Vagos', -1, 0, 1),
+('kompensator', 'Compensateur', -1, 0, 1),
+('largescope', 'Viseur large', -1, 0, 1),
+('licence1', 'Licence 1', 1, 0, 1),
+('licence2', 'Licence 2', 1, 0, 1),
+('licence3', 'Licence 3', 1, 0, 1),
+('limonade', 'Limonade', 10, 0, 1),
+('lokalizator', 'Tracker Véhicule', -1, 0, 1),
+('lom', 'Pied de Biche', 5, 0, 1),
+('lowgradefemaleseed', 'Graine de dopage femelle', 10, 0, 1),
+('lowgradefert', 'Engrais de faible qualité', 10, 0, 1),
+('lowgrademaleseed', 'Graine de dopage mâle', 10, 0, 1),
+('lsa', 'LSA', 100, 0, 1),
+('lsd', 'lsd', 100, 0, 1),
+('lsd_pooch', 'Pochon de lsd', 50, 0, 1),
+('malbora', 'Malboro', -1, 0, 1),
+('malt', 'Malt', 20, 0, 1),
+('marijuana', 'Marijuana', 14, 0, 1),
+('meat', 'Viande', 10, 0, 1),
+('medikit', 'Medikit', 20, 0, 1),
+('mediumscope', 'Viseur medium', -1, 0, 1),
+('meth', 'Methamphetamine', 100, 0, 1),
+('meth10g', 'Meth (10G)', 50, 0, 1),
+('meth1g', 'Meth (1G)', 50, 0, 1),
+('methbrick', 'Brique de Meth (100G)', 20, 0, 1),
+('methburn', 'USB-C bleu', 2, 0, 1),
+('meth_packaged', 'Meth emballé', 50, 0, 1),
+('meth_pooch', 'Pochon de meth', 50, 0, 1),
+('meth_raw', 'Meth Brute', 50, 0, 1),
+('milk', 'Lait', -1, 0, 1),
+('mleko', 'Lait ', 50, 0, 1),
+('moneywash', 'MoneyWash License', 1, 0, 1),
+('MountedScope', 'Viseur pistolets MK2', -1, 0, 1),
+('net_cracker', 'Ordinateur de crack', -1, 0, 1),
+('objectrecycle', 'Objet Recyclé', 5, 0, 1),
+('odznaka', 'Badge Police', 1, 0, 1),
+('opium', 'Opium', -1, 0, 1),
+('opium_pooch', 'Pochon de opium', -1, 0, 1),
+('packaged_chicken', 'Poulet en barquette', 100, 0, 1),
+('packaged_plank', 'Paquet de planches', 100, 0, 1),
+('patate', 'Pomme de terre', 5, 0, 1),
+('patatefrie', 'Pomme de terre frit', 5, 0, 1),
+('pilotergb', 'Tablette Pilote RGB', 1, 0, 1),
+('piluleoubli', 'Pilule de l\'oubli', 10, 0, 1),
+('pizza', 'Pizza', -1, 0, 1),
+('plantpot', 'Pot', 5, 0, 1),
+('platin50', 'Skin platinium pour Calibre 50', -1, 0, 1),
+('poppyresin', 'Résine de pavot', 160, 0, 1),
+('poudre', 'Poudre', 20, 0, 1),
+('powerade', 'Powerade', -1, 0, 1),
+('powiekszonymagazynek', 'Chargeur Améliorer', 5, 0, 1),
+('protein_shake', 'Protein Shake', -1, 0, 1),
+('purifiedwater', 'Eau purifiée', 10, 0, 1),
+('radio', 'Radio', -1, 0, 1),
+('raisin', 'Raisin', 50, 0, 1),
+('redbull', 'RedBull', 50, 0, 1),
+('rolex', 'Montre Rolex', -1, 0, 1),
+('rolpaper', 'Papier à rouler', 80, 0, 1),
+('sachetketchup', 'Sachet de Ketchup', 50, 0, 1),
+('saladp', 'Feuille de salade', 5, 0, 1),
+('salads', 'Salade sale', 5, 0, 1),
+('sandwich', 'Sandwich', -1, 0, 1),
+('shark', 'Requin', -1, 0, 1),
+('shotburst', 'Feu d\'artifice à rafale courte', -1, 0, 1),
+('sim', 'Carte Sim', -1, 0, 1),
+('slaughtered_chicken', 'Poulet abattu', 20, 0, 1),
+('sniffer', 'Tablette Bracelet electronique', 1, 0, 1),
+('soda', 'Soda', 5, 0, 1),
+('sodium_hydroxide', 'Hydroxyde de sodium', 15, 0, 1),
+('sorted_money', 'Argent contrefait - trié', -1, 0, 1),
+('splif', 'Splif', -1, 0, 1),
+('sponge', 'Eponge', -1, 0, 1),
+('sportlunch', 'Déjeuner Sportif', -1, 0, 1),
+('sprunk', 'Canette de Sprunk', -1, 0, 1),
+('starburst', 'Feu d\'artifice Starburst', -1, 0, 1),
+('steakc', 'Steak cru', 5, 0, 1),
+('steakcui', 'Steak cuit', 5, 0, 1),
+('sulfuric_acid', 'Acide sulfurique', 15, 0, 1),
+('Suppressor', 'Silencieux', 5, 0, 1),
+('tabacblond', 'Tabac Blond', 80, 0, 1),
+('tabacblondsec', 'Tabac Blond Séché', 80, 0, 1),
+('tabacbrun', 'Tabac Brun', 80, 0, 1),
+('tabacbrunsec', 'Tabac Brun Séché', 80, 0, 1),
+('tactitalmuzle', 'Frein de bouche tactique', -1, 0, 1),
+('tel', 'Téléphone', -1, 0, 1),
+('tequila', 'Bouteille de Tequila', 15, 0, 1),
+('thermite', 'Thermite', 5, 0, 1),
+('thionyl_chloride', 'Chlorure de thionyle', 100, 0, 1),
+('tomatec', 'Rondelle de tomate', 5, 0, 1),
+('tomater', 'Tomate entière', 5, 0, 1),
+('tracker', 'Bracelet electronique', 1, 0, 1),
+('trailburst', 'Feu d\'artifice Trailburst', -1, 0, 1),
+('trimmedweed', 'Herbe coupée', 50, 0, 1),
+('turtle', 'Tortue de mer', 3, 0, 1),
+('turtlebait', 'Appât de tortue', 10, 0, 1),
+('vine', 'Bouteille de Vin', 15, 0, 1),
+('vipskinmotyl', 'VIP skin papillon', -1, 0, 1),
+('vodka', 'Bouteille de Vodka', 15, 0, 1),
+('water', 'Bouteille d\'eau', -1, 0, 1),
+('wateringcan', 'Arrosoir', 5, 0, 1),
+('weed', 'Weed', -1, 0, 1),
+('weed20g', 'Weed (20G)', 100, 0, 1),
+('weed4g', 'Weed (4G)', 200, 0, 1),
+('weedbrick', 'Brique de Weed (200G)', 25, 0, 1),
+('weedburn', 'USB-C vert', 2, 0, 1),
+('weed_packaged', 'Pochon de Weed', -1, 0, 1),
+('weed_pooch', 'Pochon de weed', -1, 0, 1),
+('weed_untrimmed', 'Weed', 50, 0, 1),
+('whisky', 'Bouteille de Whisky', 15, 0, 1),
+('white_phone', 'Beyaz Telefon', 1, 0, 1),
+('wood', 'Bois', 20, 0, 1),
+('wooddlugie', 'Skin rifles', -1, 0, 1),
+('woodheavyp', 'Skin pistolet lourd en bois', -1, 0, 1),
+('wool', 'Laine', 40, 0, 1),
+('yusuf', 'Skin de luxe', 5, 0, 1),
+('zebradlugie', 'Skin zèbre rifles', -1, 0, 1),
+('ziptie', 'Menotte', 10, 0, 1),
+('zlom', 'Ferraille', 2, 0, 1);
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `items`
+--
+ALTER TABLE `items`
+  ADD PRIMARY KEY (`name`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
